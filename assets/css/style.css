@@ -29,6 +29,7 @@ img {
 	height: 200px;
     width: auto;
     padding-left: 42%;
+    padding-right: 42%;
     
     
 }
@@ -56,4 +57,16 @@ h1 {
 .timer {
     color: rgb(25, 233, 25);
     font-size: 19px;
+}
+
+.answerchoice {
+    width: 20%;
+    height: 30px;
+    margin: 2px;
+    position: right;
+    margin-left: 20%;
+}
+
+img:hover {
+    background-color: rgb(25, 233, 25);
 }
