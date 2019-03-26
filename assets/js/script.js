@@ -17,4 +17,20 @@ $(document).ready(function() {
 				countdownTimer.time--;
 				console.log(countdownTimer.time);
 //				$('.timer').html(countdownTimer.time);
-		} }});
+			if (countdownTimer.time >= 0) {
+				$('.timer').html('<h3>' + countdownTimer.time + ' seconds remaining</h3>');
+			}
+			else {
+				index++;
+				answerWrong();
+				countdownTimer.reset();
+				if (index < questionArray.length) {
+					loadQuestion(index);
+				} else {
+					$(".answerchoice").hide();
+					showScore();
+				}
+			}
+		}
+	}
+});
