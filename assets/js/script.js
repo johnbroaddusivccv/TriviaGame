@@ -32,5 +32,79 @@ $(document).ready(function() {
 				}
 			}
 		}
-	}
+	};
+var correct = 0;
+var wrong = 0;
+var q1 = {
+	question : 'Who played Carlton on the "Fresh Prince Of Bel-Air"?',
+	possibleAnswers : ['A. Rick Astley',
+				 'B. Wesley Snipes',
+				 'C. Alfonso Ribeiro',
+				 'D. Will Smith'],
+	flags : [false, false, true, false],
+	answer : 'C. Alfonso Ribeiro'
+};
+
+var q2 = {
+	question: 'How many kids Did Roseanne have on the show "Roseanne?',
+	possibleAnswers: ['A. 2',
+				 'B. 3',
+				 'C. 4',
+				 'D. 5'],
+	flags : [false, true, false, false],
+	answer : 'B. 3'
+};
+
+var q3 = {
+	question : 'What was George Lopez\'s neighbours name?',
+	possibleAnswers : ['A. Brent',
+				 'B. Ernie',
+				 'C. Robert',
+				 'D. Carlos'],
+	flags : [false, true, false, false],
+	answer : 'B. Ernie'
+};
+
+var q4 = {
+	question : 'What year was "Home Improvement" aired?',
+	possibleAnswers : ['A. 1991',
+				 'B. 2006',
+				 'C. 2001',
+				 'D. 2013'],
+	flags : [true, false, false, false],
+	answer : 'A. 1991'
+};
+
+var q5 = {
+	question : 'What is the name of Ross and Rachel\'s daughter on "Friends?"',
+	possibleAnswers : ['Christina',
+				 'B. Emma',
+				 'C. Jackie',
+				 'D. Isabella'],
+	flags : [false, true, false, false],
+	answer : 'B. Emma'
+};
+
+var q6 = {
+	question : 'Who is the oldest of the three daughters on "Full House"?',
+	possibleAnswers : ['A. DJ',
+				 'B. Kimmy Gibbler',
+				 'C. Stephanie',
+				 'D. Michelle'],
+	flags : [true, false, false, false],
+	answer : 'A. DJ'
+};
+
+var q7 = {
+	question : 'Which Nick @ Nite Dad works at Powers Brother Aviation',
+	possibleAnswers : ['A. Danny Tanner',
+				 'B. Ray Barone',
+				 'C. George Lopez',
+				 'D. Pharrell Williams'],
+	flags : [false, false, true, false],
+	answer : 'C. George Lopez'
+};
+
+
+var questionArray = [q1, q2, q3, q4, q5, q6, q7];
 });
