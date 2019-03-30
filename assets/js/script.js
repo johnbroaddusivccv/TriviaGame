@@ -1,5 +1,5 @@
 
-$(document).ready(function() {
+// $(document).ready(function() {
 	var index = 0;
 	var countdownTimer = {
 		time : 30,
@@ -107,4 +107,141 @@ var q7 = {
 
 
 var questionArray = [q1, q2, q3, q4, q5, q6, q7];
+
+function theQuestion(questionSelection) {
+	console.log(questionSelection);
+	countdownTimer.reset();
+  $(".question").html("<h3>" + questionArray[questionSelection].question + "</h3>");
+  $("#buttonA").text(questionArray[questionSelection].possibleAnswers[0]).show();
+  $("#buttonB").text(questionArray[questionSelection].possibleAnswers[1]).show();
+  $("#buttonC").text(questionArray[questionSelection].possibleAnswers[2]).show();
+  $("#buttonD").text(questionArray[questionSelection].possibleAnswers[3]).show();
+//  getAnswer();  
+//  nextQuestion(index);
+}
+
+//function nextQuestion() {
+//	index = index++;
+//	console.log(index);
+//}
+
+function setup() {
+	index = 0;
+	$('.question').append('<button id="startButton">Click This To Play!</button>');
+	$('#startButton').on('click', function() {
+		$(this).hide();
+		countdownTimer.start();
+	 	theQuestion(index);
+	});
+}		
+
+function getAnswer() {
+
+//  nextQuestion();
+	$('.answerchoice').on('click', function() {
+	  console.log('alert', index);
+		index++;
+		console.log('click', index);
+		$(".question").text('');
+		$("#buttonA").text('');
+		$("#buttonB").text('');
+		$("#buttonC").text('');
+		$("#buttonD").text('');
+		theQuestion();
+	})
+}
+
+function answerCorrect() {
+	correct++;
+	alert("Correct!");
+	console.log("correct");
+}
+
+function answerWrong() {
+	wrong++;
+	alert("Incorrect!");
+	console.log("wrong");
+}
+
+function showScore() {
+	$('.question').empty();
+	$('.question').append("<h2><p>" + correct + " correct</p></h2>");
+	$('.question').append("<h2><p>" + wrong + " incorrect</p></h2>");
+	countdownTimer.stop();
+	$('.timer').empty();
+	setup();
+
+}
+//		for (var i=0; i<questionArray.length; i++) {
+//			$('.question').append('<p>'+questionArray[i].question+'</p>');
+//			for (var j=0; j<questionArray[i].possibleAnswers.length; j++) {
+//				$('.answers').append('<span><button id="possibleAnswer">' + questionArray[i].possibleAnswers[j]+ '</button></span>');
+//			}
+//			$('#possibleAnswers').on('click', function() {
+
+
+//		console.log("click");
+//		countdownTimer.start();
+//		for (var i = 0; i < questionArray.length; i++) {
+//			console.log(i);
+
+//			$('.timer').html('<h3>'+countdownTimer.time + ' seconds remaining</h3>');
+//			$('.question').html(questionArray[i].question);
+//			while (countdownTimer != 0) {
+
+//			}
+		
+//	});
+//	$('#startButton').click(countdownTimer.start);
+
+//}
+setup();
+$('.answerchoice').on('click', function() {
+ console.log($(this));
+ if(this.id == 'buttonA') {
+ 	var answerChosen = 'A';
+ } else if(this.id == 'buttonB') {
+ 	answerChosen = 'B';
+ } else if (this.id == 'buttonC') {
+ 	answerChosen = 'C';
+ } else if (this.id == 'buttonD') {
+ 	answerChosen = 'D';
+ } 
+ if ((answerChosen == 'A') && (questionArray[index].flags[0] == true)) {
+ 	answerCorrect();
+ } else if (answerChosen == 'A') {
+ 	answerWrong();
+ }
+ if ((answerChosen == 'B') && (questionArray[index].flags[1] == true)) {
+ 	answerCorrect();
+ } else if (answerChosen == 'B') {
+ 	answerWrong();
+ }
+if ((answerChosen == 'C') && (questionArray[index].flags[2] == true)) {
+ 	answerCorrect();
+ } else if (answerChosen == 'C') {
+ 	answerWrong();
+ }
+if ((answerChosen == 'D') && (questionArray[index].flags[3] == true)) {
+ 	answerCorrect();
+ } else if (answerChosen == 'D') {
+ 	answerWrong();
+ }
+
+ $(".question").text('');
+ $("#buttonA").text('');
+ $("#buttonB").text('');
+ $("#buttonC").text('');
+ $("#buttonD").text('');
+ index++;
+ if (index < questionArray.length) {
+ 	theQuestion(index);
+ } else {
+ 	$(".answerchoice").hide();
+ 	showScore();
+ }
 });
+
+
+//	$('#start').click(countdownTimer.start);
+// })
