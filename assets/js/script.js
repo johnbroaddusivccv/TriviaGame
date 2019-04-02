@@ -13,10 +13,10 @@ var countdownTimer = {
   },
   count: function() {
     countdownTimer.time--;
-	console.log(countdownTimer.time);
+    console.log(countdownTimer.time);
 
-// Time Runs Out ====================================================
-if (countdownTimer.time >= 0) {
+    // Time Runs Out ================================================
+    if (countdownTimer.time >= 0) {
       $(".timer").html(
         "<h3>" + countdownTimer.time + " seconds remaining</h3>"
       );
@@ -164,7 +164,7 @@ function showScore() {
   $(".question").append("<h2><p>" + wrong + " incorrect</p></h2>");
   countdownTimer.stop();
   $(".timer").empty();
-  setup();
+
 }
 setup();
 $(".answerchoice").on("click", function() {
