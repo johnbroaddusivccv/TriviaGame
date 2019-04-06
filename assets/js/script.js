@@ -13,7 +13,6 @@ var countdownTimer = {
   },
   count: function() {
     countdownTimer.time--;
-    console.log(countdownTimer.time);
 
     // Time Runs Out ================================================
     if (countdownTimer.time >= 0) {
@@ -100,7 +99,6 @@ var questionArray = [q1, q2, q3, q4, q5, q6, q7];
 
 // Question & Answers in Document ===================================
 function theQuestion(questionSelection) {
-  console.log(questionSelection);
   countdownTimer.reset();
   $(".question").html(
     "<h3>" + questionArray[questionSelection].question + "</h3>"
@@ -134,9 +132,8 @@ function setup() {
 
 function getAnswer() {
   $(".answerchoice").on("click", function() {
-    console.log("alert", index);
+
     index++;
-    console.log("click", index);
     $(".question").text("");
     $("#buttonA").text("");
     $("#buttonB").text("");
@@ -149,13 +146,11 @@ function getAnswer() {
 function answerCorrect() {
   correct++;
   alert("Correct!");
-  console.log("correct");
 }
 
 function answerWrong() {
   wrong++;
   alert("Incorrect!");
-  console.log("wrong");
 }
 // Score Board ======================================================
 function showScore() {
@@ -168,7 +163,6 @@ function showScore() {
 }
 setup();
 $(".answerchoice").on("click", function() {
-  console.log($(this));
   if (this.id == "buttonA") {
     var answerChosen = "A";
   } else if (this.id == "buttonB") {
