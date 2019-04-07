@@ -132,7 +132,6 @@ function setup() {
 
 function getAnswer() {
   $(".answerchoice").on("click", function() {
-
     index++;
     $(".question").text("");
     $("#buttonA").text("");
@@ -159,7 +158,6 @@ function showScore() {
   $(".question").append("<h2><p>" + wrong + " incorrect</p></h2>");
   countdownTimer.stop();
   $(".timer").empty();
-
 }
 setup();
 $(".answerchoice").on("click", function() {

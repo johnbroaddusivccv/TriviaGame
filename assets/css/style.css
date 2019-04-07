@@ -1,70 +1,66 @@
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
-
-
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface");
 
 body {
-    background: url(../images/darkness.png)
+  background: url(../images/darkness.png);
 }
 
 button {
-	width: 80%;
-	height: 40px;
-	margin: 0 10%;
-	float: left;
+  width: 80%;
+  height: 40px;
+  margin: 0 10%;
+  float: left;
 }
 
 button.answerchoice {
-	display: none;
+  display: none;
 }
 
 button:hover {
-	background-color: rgb(25, 233, 25);
+  background-color: rgb(25, 233, 25);
 }
 
 .answers div {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 img {
-	height: 200px;
-    width: auto;
-    padding-left: 42%;
-    padding-right: 42%;
-    
-    
+  height: 200px;
+  width: auto;
+  padding-left: 42%;
+  padding-right: 42%;
 }
 
-h2, h3, .question {
-	text-align: center;
+h2,
+h3,
+.question {
+  text-align: center;
 }
 
 h1 {
-    text-align: center;
-    font-family: "Abril Fatface", "sans-serif", "serif";
-    color:whitesmoke;
+  text-align: center;
+  font-family: "Abril Fatface", "sans-serif", "serif";
+  color: whitesmoke;
 }
 
 .question {
-    color: whitesmoke;
-    font-size: 24px;
-    font-family: "Abril Fatface", "sans-serif", "serif";
+  color: whitesmoke;
+  font-size: 24px;
+  font-family: "Abril Fatface", "sans-serif", "serif";
 }
 
 .question:hover {
-    color: rgb(25, 233, 25);
+  color: rgb(25, 233, 25);
 }
 
 .timer {
-    color: rgb(25, 233, 25);
-    font-size: 19px;
+  color: rgb(25, 233, 25);
+  font-size: 19px;
 }
 
 .answerchoice {
-    width: 20%;
-    height: 30px;
-    margin: 2px;
-    position: right;
-    margin-left: 20%;
+  width: 20%;
+  height: 30px;
+  margin: 2px;
+  position: right;
+  margin-left: 20%;
 }
-
-
